@@ -1,13 +1,10 @@
-const pressed = [];
+const input = document.querySelector("input");
 const secretCode = "i will hire you";
 
 
 window.addEventListener("keyup", (e) => {
-    console.log(e.key);
-    pressed.push(e.key);
-    pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
-    if (pressed.join("").includes(secretCode)) {
+    if (input.value === secretCode) {
         cornify_add();
+        input.value = "";
     }
-    console.log(pressed);
-})
+});
